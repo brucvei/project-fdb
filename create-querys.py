@@ -1,47 +1,47 @@
 import pandas as pd
 
-# # ATHLETE
-# df = pd.read_csv('csv/athlete.csv')
-#
-# def generate_sql(row):
-#     id, name, gender = row['ID'], row['Name'], row['Sex']
-#     name = name.replace("'", "''")
-#     return f"INSERT INTO athlete (id, name, sex) VALUES ({id}, '{name}', '{gender}');"
-#
-# sql_queries = df.apply(generate_sql, axis=1)
-#
-# with open('query/athlete.sql', 'w') as f:
-#     for query in sql_queries:
-#         f.write(query + '\n')
+# ATHLETE
+df = pd.read_csv('csv/athlete.csv')
 
-# # MODALITY
-# df = pd.read_csv('csv/modality.csv')
-#
-# def generate_sql(row):
-#     id, sport, name = row['id'], row['Sport'], row['Event']
-#     sport = sport.replace("'", "''")
-#     name = name.replace("'", "''")
-#     return f"INSERT INTO modality (id, name, sport) VALUES ({id}, '{name}', '{sport}');"
-#
-# sql_queries = df.apply(generate_sql, axis=1)
+def generate_sql(row):
+    id, name, gender = row['ID'], row['Name'], row['Sex']
+    name = name.replace("'", "''")
+    return f"INSERT INTO athlete (id, name, sex) VALUES ({id}, '{name}', '{gender}');"
 
-# with open('query/modality.sql', 'w') as f:
-#     for query in sql_queries:
-#         f.write(query + '\n')
+sql_queries = df.apply(generate_sql, axis=1)
 
-# # OLYMPIC
-# df = pd.read_csv('csv/olympic.csv')
-#
-# def generate_sql(row):
-#     id, year, season, city, games = row['id'], row['Year'], row['Season'], row['City'], row['Games']
-#     city = city.replace("'", "''")
-#     return f"INSERT INTO olympic (id, year, season, city, name) VALUES ({id}, {year}, '{season}', '{city}', '{games}');"
-#
-# sql_queries = df.apply(generate_sql, axis=1)
-#
-# with open('query/olympic.sql', 'w') as f:
-#     for query in sql_queries:
-#         f.write(query + '\n')
+with open('query/athlete.sql', 'w') as f:
+    for query in sql_queries:
+        f.write(query + '\n')
+
+# MODALITY
+df = pd.read_csv('csv/modality.csv')
+
+def generate_sql(row):
+    id, sport, name = row['id'], row['Sport'], row['Event']
+    sport = sport.replace("'", "''")
+    name = name.replace("'", "''")
+    return f"INSERT INTO modality (id, name, sport) VALUES ({id}, '{name}', '{sport}');"
+
+sql_queries = df.apply(generate_sql, axis=1)
+
+with open('query/modality.sql', 'w') as f:
+    for query in sql_queries:
+        f.write(query + '\n')
+
+# OLYMPIC
+df = pd.read_csv('csv/olympic.csv')
+
+def generate_sql(row):
+    id, year, season, city, games = row['id'], row['Year'], row['Season'], row['City'], row['Games']
+    city = city.replace("'", "''")
+    return f"INSERT INTO olympic (id, year, season, city, name) VALUES ({id}, {year}, '{season}', '{city}', '{games}');"
+
+sql_queries = df.apply(generate_sql, axis=1)
+
+with open('query/olympic.sql', 'w') as f:
+    for query in sql_queries:
+        f.write(query + '\n')
 
 # ATHLETE_MODALITY
 df = pd.read_csv('csv/athlete_modality.csv')
@@ -65,15 +65,15 @@ with open('query/athlete_modality.sql', 'w') as f:
     for query in sql_queries:
         f.write(query + '\n')
 
-# # MEDAL
-# df = pd.read_csv('csv/medals.csv')
-#
-# def generate_sql(row):
-#     id, athlete_modality_id, medal = row['id'], row['id_atlhete_modality'], row['Medal']
-#     return f"INSERT INTO medals (id, atlhete_id, type) VALUES ({id}, {athlete_modality_id}, '{medal}');"
-#
-# sql_queries = df.apply(generate_sql, axis=1)
-#
-# with open('query/medal.sql', 'w') as f:
-#     for query in sql_queries:
-#         f.write(query + '\n')
+# MEDAL
+df = pd.read_csv('csv/medals.csv')
+
+def generate_sql(row):
+    id, athlete_modality_id, medal = row['id'], row['id_atlhete_modality'], row['Medal']
+    return f"INSERT INTO medals (id, atlhete_id, type) VALUES ({id}, {athlete_modality_id}, '{medal}');"
+
+sql_queries = df.apply(generate_sql, axis=1)
+
+with open('query/medal.sql', 'w') as f:
+    for query in sql_queries:
+        f.write(query + '\n')
