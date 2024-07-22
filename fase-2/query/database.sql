@@ -2,16 +2,14 @@ DROP DATABASE IF EXISTS fdb_2;
 
 CREATE DATABASE fdb_2;
 
-CREATE TABLE Athlete
-(
+CREATE TABLE Athlete (
     id   INTEGER NOT NULL PRIMARY KEY,
     name TEXT    NOT NULL,
     sex  CHAR    NOT NULL,
     noc  CHAR[3] NOT NULL
 );
 
-CREATE TABLE Olympic
-(
+CREATE TABLE Olympic (
     id     INTEGER NOT NULL PRIMARY KEY,
     name   TEXT    NOT NULL,
     year   integer NOT NULL,
@@ -19,15 +17,13 @@ CREATE TABLE Olympic
     city   TEXT
 );
 
-CREATE TABLE Modality
-(
+CREATE TABLE Modality (
     id    INTEGER NOT NULL PRIMARY KEY,
     name  TEXT    NOT NULL,
     sport TEXT
 );
 
-CREATE TABLE Athlete_Modality
-(
+CREATE TABLE Athlete_Modality (
     id          INTEGER NOT NULL PRIMARY KEY,
     modality_id INT     NOT NULL,
     athlete_id  INT     NOT NULL,
@@ -40,10 +36,9 @@ CREATE TABLE Athlete_Modality
     FOREIGN KEY (olympic_id) REFERENCES Olympic (id)
 );
 
-CREATE TABLE Medals
-(
+CREATE TABLE Medals (
     id         INTEGER     NOT NULL PRIMARY KEY,
-    type       varchar[50] NOT NULL,
+    type       TEXT NOT NULL,
     atlhete_id INT         NOT NULL,
     FOREIGN KEY (atlhete_id) REFERENCES Athlete_Modality (id)
 );

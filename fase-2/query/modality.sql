@@ -449,3 +449,9 @@ INSERT INTO modality (id, name, sport) VALUES (448, 'Wrestling Men''s Heavyweigh
 INSERT INTO modality (id, name, sport) VALUES (449, 'Cross Country Skiing Women''s 30 kilometres', 'Cross Country Skiing');
 INSERT INTO modality (id, name, sport) VALUES (450, 'Boxing Women''s Lightweight', 'Boxing');
 INSERT INTO modality (id, name, sport) VALUES (451, 'Shooting Men''s Running Target, 50 metres', 'Shooting');
+INSERT INTO modality (id, name) VALUES (452, 'Slalom, Men');
+INSERT INTO modality (id, name) VALUES (453, 'Middleweight, Freestyle, Women');
+INSERT INTO modality (id, name) VALUES (454, 'Lightweight, Freestyle, Women');
+INSERT INTO modality (id, name) VALUES (455, 'Featherweight, Freestyle, Women');
+INSERT INTO modality (id, name) VALUES (456, 'Individual, Men');
+INSERT INTO modality (id, name) VALUES (457, 'Team, Men');
